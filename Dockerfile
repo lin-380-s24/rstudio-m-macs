@@ -17,6 +17,9 @@ RUN apt-get -y update && \
     libssl-dev \
     libharfbuzz-dev \
     libfribidi-dev \
+    libfreetype6-dev \
+    libtiff5-dev \
+    libjpeg-dev \
     cmake \
     pandoc \
     python3
