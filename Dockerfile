@@ -16,6 +16,7 @@ RUN apt-get -y update && \
     libfontconfig1-dev \
     libssl-dev \
     libharfbuzz-dev \
+    libfribidi-dev \
     cmake \
     pandoc \
     python3
