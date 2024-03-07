@@ -36,7 +36,6 @@ In this step, we are going to create a new container using the `francojc/rstudio
    3. **Volume**: Click the `...` button and add the path to the folder that you used for the previous RStudio container[^note]. This will allow you to access the files you have already created. Then, make sure to map the folder on your computer to `/home/rstudio/Workspace/` in the container.
    4. **Environment Variables**:
       1. `PASSWORD`: your_password
-      2. `ROOT`: `true`
 
 Click `Run` to create the container.
 
