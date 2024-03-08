@@ -39,9 +39,6 @@ WORKDIR /home/rstudio
 # Run as the rstudio user.
 USER rstudio
 
-# Quarto install tinytex
-RUN quarto install tinytex
-
 # Copy the renv.lock file.
 COPY renv.lock /home/rstudio/
 
@@ -52,8 +49,11 @@ RUN R -e "install.packages(c('renv', 'remotes'), repos = 'https://cran.rstudio.c
 # Remove the renv.lock file.
 RUN rm /home/rstudio/renv.lock
 
-# Install tinytex for Quarto support.
+# Add GitHub packages.
 RUN R -e "remotes::install_github(c('qtalr/qtalrkit','TalkBank/TBDBr','quanteda/quanteda.corpora'))"
+
+# Install tinytex for Quarto support.
+RUN R -e "tinytex::install_tinytex()"
 
 # Create the Lessons directory.
 RUN mkdir -p /home/rstudio/Lessons
