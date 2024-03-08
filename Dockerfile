@@ -72,4 +72,6 @@ RUN chown rstudio:rstudio /home/rstudio/.config/rstudio/rstudio-prefs.json
 COPY swirl-setup.R /home/rstudio/Lessons/swirl-setup.R
 RUN chown rstudio:rstudio /home/rstudio/Lessons/swirl-setup.R
 
-
+# Add git-setup.sh file
+COPY git-setup.sh /home/rstudio/git-setup.sh
+RUN chown rstudio:rstudio /home/rstudio/git-setup.sh
