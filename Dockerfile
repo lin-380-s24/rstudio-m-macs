@@ -1,4 +1,4 @@
-# Dockefile
+# Dockerfile
 
 # Use the rocker/rstudio image as the base image.
 FROM rocker/rstudio:latest
