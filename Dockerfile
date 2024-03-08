@@ -43,14 +43,10 @@ USER rstudio
 COPY renv.lock /home/rstudio/
 
 # Install renv and restore the package library from the renv.lock file.
-RUN R -e "install.packages(c('renv', 'remotes'), repos = 'https://cran.rstudio.com')" && \
-    R -e "renv::restore()"
-
-# Remove the renv.lock file.
-RUN rm /home/rstudio/renv.lock
+RUN R -e "install.packages(c('renv', 'remotes', 'usethis', 'readtext', 'tinytex', 'rmarkdown', 'swirl'), repos = 'https://cran.rstudio.com')"
 
 # Add GitHub packages.
-RUN R -e "remotes::install_github(c('qtalr/qtalrkit','TalkBank/TBDBr','quanteda/quanteda.corpora'))"
+RUN R -e "remotes::install_github(c('qtalr/qtalrkit','quanteda/quanteda.corpora'))"
 
 # Install tinytex for Quarto support.
 RUN R -e "tinytex::install_tinytex()"
